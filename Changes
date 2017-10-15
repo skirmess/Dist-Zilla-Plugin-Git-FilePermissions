@@ -2,4 +2,6 @@ Revision history for Dist-Zilla-Plugin-Git-FilePermissions
 
 {{$NEXT}}
 
+0.001  2017-10-15 19:39:17 UTC
+
   - Initial release
