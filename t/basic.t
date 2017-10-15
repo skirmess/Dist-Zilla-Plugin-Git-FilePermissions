@@ -93,7 +93,7 @@ sub _test_with_defaults {
     );
 
     # Get the directory where the source of the new distributions is
-    my $root_dir = $tzil->root;
+    my $root_dir = path( $tzil->root );
 
     # Configure a Git repository in the source and create our 4 test files
     my @files = _configure_root($root_dir);
@@ -133,7 +133,7 @@ sub _test_with_config_bin {
     );
 
     # Get the directory where the source of the new distributions is
-    my $root_dir = $tzil->root;
+    my $root_dir = path( $tzil->root );
 
     # Configure a Git repository in the source and create our 4 test files
     my @files = _configure_root($root_dir);
@@ -173,7 +173,7 @@ sub _test_with_config_bin_scripts {
     );
 
     # Get the directory where the source of the new distributions is
-    my $root_dir = $tzil->root;
+    my $root_dir = path( $tzil->root );
 
     # Configure a Git repository in the source and create our 4 test files
     my @files = _configure_root($root_dir);
@@ -213,7 +213,7 @@ sub _test_with_config_scripts_unchanged {
     );
 
     # Get the directory where the source of the new distributions is
-    my $root_dir = $tzil->root;
+    my $root_dir = path( $tzil->root );
 
     # Configure a Git repository in the source and create our 4 test files
     my @files = _configure_root($root_dir);
