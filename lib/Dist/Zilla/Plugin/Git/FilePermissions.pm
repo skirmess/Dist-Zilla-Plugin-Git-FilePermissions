@@ -209,10 +209,6 @@ This is free software, licensed under:
 
   The (two-clause) FreeBSD License
 
-=head1 SEE ALSO
-
-L<chmod|chmod>
-
 =cut
 
 # vim: ts=4 sts=4 sw=4 et: syntax=perl

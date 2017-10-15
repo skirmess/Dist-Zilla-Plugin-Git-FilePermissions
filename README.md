@@ -70,7 +70,3 @@ This software is Copyright (c) 2017 by Sven Kirmess.
 This is free software, licensed under:
 
     The (two-clause) FreeBSD License
-
-# SEE ALSO
-
-[chmod](https://metacpan.org/pod/chmod)
