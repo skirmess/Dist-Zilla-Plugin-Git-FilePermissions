@@ -10,6 +10,7 @@ requires "strict" => "0";
 requires "warnings" => "0";
 
 on 'test' => sub {
+  requires "Dist::Zilla::Plugin::Git::GatherDir" => "0";
   requires "Test::DZil" => "0";
   requires "Test::Fatal" => "0";
   requires "Test::More" => "0";

@@ -149,6 +149,7 @@
       },
       "test" : {
          "requires" : {
+            "Dist::Zilla::Plugin::Git::GatherDir" : "0",
             "Test::DZil" : "0",
             "Test::Fatal" : "0",
             "Test::More" : "0",
@@ -180,6 +181,7 @@
    "version" : "0.001",
    "x_BuiltWith" : {
       "modules" : {
+         "Dist::Zilla::Plugin::Git::GatherDir" : "2.042",
          "Dist::Zilla::Role::BeforeBuild" : "6.010",
          "ExtUtils::MakeMaker" : "7.30",
          "File::Spec" : "3.63",
@@ -890,6 +892,17 @@
             },
             "name" : "@Author::SKIRMESS/Git::Push",
             "version" : "2.042"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "test",
+                  "type" : "requires"
+               }
+            },
+            "name" : "Prereqs",
+            "version" : "6.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

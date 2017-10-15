@@ -19,8 +19,9 @@ This plugin fixes the file permissions of all the files in the Git repository
 where your project is saved. Files not in the Git index, and directories, are
 ignored.
 
-Without configuration, every file is changed to the default 0644. You can
-configure different permissions with the **perms** argument in the `dist.ini`.
+Without configuration, every file is changed to the default permission of
+0644\. You can configure different permissions for some files with the
+**perms** argument in the `dist.ini`.
 
 The plugin runs in the before build phase, which means it will fix the file
 permissions before the files are picked up in the file gather phase. The new

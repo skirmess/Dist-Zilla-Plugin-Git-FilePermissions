@@ -28,6 +28,7 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "Dist::Zilla::Plugin::Git::GatherDir" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
     "Test::More" => 0,
@@ -43,6 +44,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Dist::Zilla::Plugin::Git::GatherDir" => 0,
   "Dist::Zilla::Role::BeforeBuild" => 0,
   "Git::Wrapper" => 0,
   "Moose" => 0,
