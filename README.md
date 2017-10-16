@@ -27,6 +27,9 @@ The plugin runs in the before build phase, which means it will fix the file
 permissions before the files are picked up in the file gather phase. The new
 permissions are therefore also the ones used in the build.
 
+The plugin should ensure that you always commit your files with the correct
+permissions.
+
 ## perms
 
 The **perms** configuration option takes the form of:
@@ -70,3 +73,7 @@ This software is Copyright (c) 2017 by Sven Kirmess.
 This is free software, licensed under:
 
     The (two-clause) FreeBSD License
+
+# SEE ALSO
+
+[Dist::Zilla::Plugin::Git::RequireUnixEOL](https://metacpan.org/pod/Dist::Zilla::Plugin::Git::RequireUnixEOL)
