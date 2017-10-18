@@ -264,11 +264,19 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::SKIRMESS::RepositoryBase
       name: '@Author::SKIRMESS/Author::SKIRMESS::RepositoryBase'
-      version: '0.026'
+      version: '0.029'
     -
       class: Dist::Zilla::Plugin::Author::SKIRMESS::InsertVersion
       name: '@Author::SKIRMESS/Author::SKIRMESS::InsertVersion'
-      version: '0.026'
+      version: '0.029'
+    -
+      class: Dist::Zilla::Plugin::Git::FilePermissions
+      name: '@Author::SKIRMESS/Git::FilePermissions'
+      version: '0.002'
+    -
+      class: Dist::Zilla::Plugin::Git::RequireUnixEOL
+      name: '@Author::SKIRMESS/Git::RequireUnixEOL'
+      version: '0.001'
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: '@Author::SKIRMESS/NextRelease'
@@ -280,6 +288,7 @@ x_Dist_Zilla:
           untracked_files: die
         Dist::Zilla::Role::Git::DirtyFiles:
           allow_dirty:
+            - .appveyor.yml
             - .perlcriticrc
             - .perltidyrc
             - .travis.yml
@@ -562,6 +571,7 @@ x_Dist_Zilla:
           commit_msg: '%v'
         Dist::Zilla::Role::Git::DirtyFiles:
           allow_dirty:
+            - .appveyor.yml
             - .perlcriticrc
             - .perltidyrc
             - .travis.yml
