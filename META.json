@@ -163,7 +163,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Git::FilePermissions" : {
          "file" : "lib/Dist/Zilla/Plugin/Git/FilePermissions.pm",
-         "version" : "0.002"
+         "version" : "0.003"
       }
    },
    "release_status" : "stable",
@@ -178,7 +178,7 @@
          "web" : "https://github.com/skirmess/Dist-Zilla-Plugin-Git-FilePermissions"
       }
    },
-   "version" : "0.002",
+   "version" : "0.003",
    "x_BuiltWith" : {
       "modules" : {
          "Dist::Zilla::Plugin::Git::GatherDir" : "2.042",
@@ -873,7 +873,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.002",
+                  "tag" : "0.003",
                   "tag_format" : "%v",
                   "tag_message" : ""
                },
