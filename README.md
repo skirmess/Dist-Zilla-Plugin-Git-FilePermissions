@@ -20,9 +20,9 @@ where your project is saved. Files not in the Git index, and directories, are
 ignored.
 
 Without configuration, every file is changed to the default permission of
-0644\. The default permissions can be changed with the **default** argument
+0644\. The default permissions can be changed with the **default** option
 and you can configure different permissions for some files with the
-**perms** argument in the `dist.ini`.
+**perms** option in the `dist.ini`.
 
 The plugin runs in the before build phase, which means it will fix the file
 permissions before the files are picked up in the file gather phase. The new
