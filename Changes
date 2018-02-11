@@ -2,6 +2,8 @@ Revision history for Dist-Zilla-Plugin-Git-FilePermissions
 
 {{$NEXT}}
 
+  - Ignore files that don't exist or where Git thinks they are a file but they are something else (e.g. submodules)
+
 0.003  2017-10-20 23:39:10 UTC
 
   - Added a default option to specify default permissions

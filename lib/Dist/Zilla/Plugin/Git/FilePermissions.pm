@@ -51,6 +51,11 @@ sub before_build {
   FILE:
     for my $file (@files) {
 
+        # Git reports submodules as a file although they are a directory on
+        # the file system. We skip them because the default permissions of
+        # 0644 are suboptimal for directories.
+        next FILE if !-f $file;
+
         # default permission
         my $perm = oct( $self->default );
 
