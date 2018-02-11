@@ -2,8 +2,10 @@ Revision history for Dist-Zilla-Plugin-Git-FilePermissions
 
 {{$NEXT}}
 
-  - Replaced plugin bundle Author::SKIRMESS with an inline bundle through a Git submodule on https://github.com/skirmess/dzil-inc
-  - Ignore files that don't exist or where Git thinks they are a file but they are something else (e.g. submodules)
+  - Ignore files that don't exist or where Git thinks they are a file but
+    they are something else (e.g. submodules)
+  - Replaced plugin bundle Author::SKIRMESS with an inline bundle through
+    a Git submodule on https://github.com/skirmess/dzil-inc
 
 0.003  2017-10-20 23:39:10 UTC
 
