@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Git::FilePermissions - fix the file permissions in your Git
 
 # VERSION
 
-Version 0.003
+Version 0.004
 
 # SYNOPSIS
 
