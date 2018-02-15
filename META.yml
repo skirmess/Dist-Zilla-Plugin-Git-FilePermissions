@@ -281,7 +281,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::FilePermissions
       name: =MyBundle/Git::FilePermissions
-      version: '0.003'
+      version: '0.004'
     -
       class: Dist::Zilla::Plugin::Git::RequireUnixEOL
       name: =MyBundle/Git::RequireUnixEOL
@@ -457,9 +457,9 @@ x_Dist_Zilla:
       name: =MyBundle/MetaJSON
       version: '6.010'
     -
-      class: Dist::Zilla::Plugin::CPANFile
-      name: =MyBundle/CPANFile
-      version: '6.010'
+      class: MyCPANFile
+      name: =MyBundle/=MyCPANFile
+      version: '0.033'
     -
       class: Dist::Zilla::Plugin::ReadmeAnyFromPod
       config:
