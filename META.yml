@@ -23,10 +23,6 @@ meta-spec:
 name: Dist-Zilla-Plugin-Git-FilePermissions
 no_index:
   directory:
-    - corpus
-    - dzil-inc
-    - examples
-    - inc
     - t
     - xt
 provides:
