@@ -26,6 +26,7 @@ on test => sub {
 };
 
 on develop => sub {
+    requires 'FindBin';
     requires 'Perl::Critic', '1.130';
     requires 'Perl::Critic::Policy::Bangs::ProhibitDebuggingModules', '1.12';
     requires 'Perl::Critic::Policy::Bangs::ProhibitFlagComments', '1.12';
