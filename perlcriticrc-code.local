@@ -1,7 +1,5 @@
 [-Bangs::ProhibitBitwiseOperators]
-[-RegularExpressions::ProhibitEnumeratedClasses]
 [-RegularExpressions::RequireDotMatchAnything]
 [-RegularExpressions::RequireExtendedFormatting]
 [-RegularExpressions::RequireLineBoundaryMatching]
 [-ValuesAndExpressions::ProhibitLeadingZeros]
-[-ValuesAndExpressions::ProhibitMagicNumbers]
