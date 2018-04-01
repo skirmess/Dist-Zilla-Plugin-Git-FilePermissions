@@ -1,6 +1,6 @@
 requires 'Dist::Zilla::Role::BeforeBuild';
 requires 'Git::Wrapper';
-requires 'Moose';
+requires 'Moose', '2.1203';
 requires 'Path::Tiny';
 requires 'Safe::Isa';
 requires 'Try::Tiny';
