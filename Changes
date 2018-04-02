@@ -2,21 +2,16 @@ Revision history for Dist-Zilla-Plugin-Git-FilePermissions
 
 {{$NEXT}}
 
-  - Increased Moose dependency to 2.1203 because older versions break with current Module::Runtime
-  - Added xt/author/perltidy.t test based on Test::PerlTidy
-  - Remove non-existing default directories from no_index in META.* files
-  - Removed develop dependencies from META.json file
-  - Removed x_authority from META.* files
-  - Removed x_Dist_Zilla from META.* files
-  - Removed x_BuiltWith from META.* files
-  - Removed cpanfile from distribution
+1.000  2018-04-02 22:38:46 UTC
+
+  - No code changes
+  - Distribution cleanup
+  - Bumped dependency on Moose to 2.1203
 
 0.004  2018-02-11 18:47:41 UTC
 
   - Ignore files that don't exist or where Git thinks they are a file but
     they are something else (e.g. submodules)
-  - Replaced plugin bundle Author::SKIRMESS with an inline bundle through
-    a Git submodule on https://github.com/skirmess/dzil-inc
 
 0.003  2017-10-20 23:39:10 UTC
 

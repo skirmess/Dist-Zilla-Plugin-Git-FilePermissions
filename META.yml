@@ -15,7 +15,7 @@ configure_requires:
   ExtUtils::MakeMaker: '0'
   perl: '5.006'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 6.010, CPAN::Meta::Converter version 2.150010'
+generated_by: 'Dist::Zilla version 6.011, CPAN::Meta::Converter version 2.150010'
 license: open_source
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -28,7 +28,7 @@ no_index:
 provides:
   Dist::Zilla::Plugin::Git::FilePermissions:
     file: lib/Dist/Zilla/Plugin/Git/FilePermissions.pm
-    version: '0.004'
+    version: '1.000'
 requires:
   Dist::Zilla::Role::BeforeBuild: '0'
   Git::Wrapper: '0'
@@ -44,5 +44,5 @@ resources:
   bugtracker: https://github.com/skirmess/Dist-Zilla-Plugin-Git-FilePermissions/issues
   homepage: https://github.com/skirmess/Dist-Zilla-Plugin-Git-FilePermissions
   repository: https://github.com/skirmess/Dist-Zilla-Plugin-Git-FilePermissions.git
-version: '0.004'
+version: '1.000'
 x_serialization_backend: 'YAML::Tiny version 1.70'
