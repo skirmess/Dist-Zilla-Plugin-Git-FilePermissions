@@ -7,10 +7,16 @@ use warnings;
 our $VERSION = '1.000';
 
 use Moose;
+with 'Dist::Zilla::Role::BeforeBuild';
 
-with qw(
-  Dist::Zilla::Role::BeforeBuild
-);
+use Git::Wrapper;
+use Path::Tiny;
+use Safe::Isa;
+use Try::Tiny;
+
+use namespace::autoclean;
+
+sub mvp_multivalue_args { return (qw( perms )) }
 
 has _git => (
     is      => 'ro',
@@ -18,8 +24,6 @@ has _git => (
     lazy    => 1,
     default => sub { Git::Wrapper->new( path( shift->zilla->root )->absolute->stringify ) },
 );
-
-sub mvp_multivalue_args { return (qw( perms )) }
 
 has default => (
     is      => 'ro',
@@ -32,13 +36,6 @@ has perms => (
     isa     => 'Maybe[ArrayRef]',
     default => sub { [] },
 );
-
-use Git::Wrapper;
-use Path::Tiny;
-use Safe::Isa;
-use Try::Tiny;
-
-use namespace::autoclean;
 
 sub before_build {
     my ($self) = @_;
