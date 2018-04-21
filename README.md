@@ -20,9 +20,9 @@ where your project is saved. Files not in the Git index, and directories, are
 ignored.
 
 Without configuration, every file is changed to the default permission of
-0644\. The default permissions can be changed with the **default** option
+0644\. The default permissions can be changed with the `default` option
 and you can configure different permissions for some files with the
-**perms** option in the `dist.ini`.
+`perms` option in the `dist.ini`.
 
 The plugin runs in the before build phase, which means it will fix the file
 permissions before the files are picked up in the file gather phase. The new
@@ -33,7 +33,7 @@ permissions.
 
 ## perms
 
-The **perms** configuration option takes the form of:
+The `perms` configuration option takes the form of:
 
     perms = REGEX WHITESPACE PERMS
 
@@ -41,10 +41,10 @@ or
 
     perms = REGEX WHITESPACE -
 
-The **perms** configuration options are processed in order for every file. If
-a file matches the **REGEX** the file permissions are changed to the
-corresponding **PERMS** instead of the default permissions of 0644. If the
-**PERMS** are **-** the file is ignored.
+The `perms` configuration options are processed in order for every file. If
+a file matches the `REGEX` the file permissions are changed to the
+corresponding `PERMS` instead of the default permissions of 0644. If the
+`PERMS` are `-` the file is ignored.
 
 # SUPPORT
 
