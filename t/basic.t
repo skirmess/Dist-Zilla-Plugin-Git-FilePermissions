@@ -3,7 +3,6 @@
 use 5.006;
 use strict;
 use warnings;
-use autodie;
 
 use Git::Wrapper;
 use Path::Tiny;
@@ -49,7 +48,7 @@ sub main {
         my $file    = $tmp_dir->child('file.txt');
         $file->spew("hello world\n");
 
-        chmod $value, $file;
+        chmod $value, $file or BAIL_OUT "chmod $value, $file: $!";
         my $perm = ( stat $file )[2] & 07777;
 
         note( sprintf q{On this system, 'chmod 0%o' results in 0%o}, $value, $perm );
@@ -76,22 +75,22 @@ sub _configure_root {
     push @files, path($root_dir)->child('bin/a');
     $files[-1]->spew();
     $git->add( $files[-1] );
-    chmod 0755, $files[-1];
+    chmod 0755, $files[-1] or BAIL_OUT "chmod 0755, $files[-1]: $!";
 
     push @files, path($root_dir)->child('scripts/b');
     $files[-1]->spew();
     $git->add( $files[-1] );
-    chmod 0600, $files[-1];
+    chmod 0600, $files[-1] or BAIL_OUT "chmod 0600, $files[-1]: $!";
 
     push @files, path($root_dir)->child('lib/c.pm');
     $files[-1]->spew();
     $git->add( $files[-1] );
-    chmod 0, $files[-1];
+    chmod 0, $files[-1] or BAIL_OUT "chmod 0, $files[-1]: $!";
 
     push @files, path($root_dir)->child('d');
     $files[-1]->spew();
     $git->add( $files[-1] );
-    chmod 0644, $files[-1];
+    chmod 0644, $files[-1] or BAIL_OUT "chmod 0644, $files[-1]: $!";
 
     my $sub_src = _create_submodule();
     push @files, path($root_dir)->child('s');
