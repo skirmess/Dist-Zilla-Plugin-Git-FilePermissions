@@ -7,7 +7,7 @@ build_requires:
   Test::DZil: '0'
   Test::Fatal: '0'
   Test::More: '0'
-  Test::TempDir::Tiny: '0'
+  Test::TempDir::Tiny: '0.017'
   lib: '0'
   perl: '5.006'
 configure_requires:

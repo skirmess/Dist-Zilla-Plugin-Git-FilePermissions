@@ -32,7 +32,7 @@ my %WriteMakefileArgs = (
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
     "Test::More" => 0,
-    "Test::TempDir::Tiny" => 0,
+    "Test::TempDir::Tiny" => "0.017",
     "lib" => 0
   },
   "VERSION" => "1.000",
@@ -52,7 +52,7 @@ my %FallbackPrereqs = (
   "Test::DZil" => 0,
   "Test::Fatal" => 0,
   "Test::More" => 0,
-  "Test::TempDir::Tiny" => 0,
+  "Test::TempDir::Tiny" => "0.017",
   "Try::Tiny" => 0,
   "lib" => 0,
   "namespace::autoclean" => 0,

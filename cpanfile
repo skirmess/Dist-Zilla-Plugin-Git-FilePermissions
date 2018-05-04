@@ -19,7 +19,7 @@ on test => sub {
     requires 'Test::DZil';
     requires 'Test::Fatal';
     requires 'Test::More';
-    requires 'Test::TempDir::Tiny';
+    requires 'Test::TempDir::Tiny', '0.017';
     requires 'lib';
     requires 'perl', '5.006';
 };
