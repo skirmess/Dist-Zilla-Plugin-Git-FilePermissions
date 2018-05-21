@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-Plugin-Git-FilePermissions
 
 {{$NEXT}}
 
+  - skip needs $how_many with Test::More < 1.302013_009
   - Removed autodie in tests
   - Code cleanup - moved all 'use' before 'has'
 
