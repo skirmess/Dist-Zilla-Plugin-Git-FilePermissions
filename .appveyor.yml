@@ -16,16 +16,6 @@ environment:
       DIST_ZILLA: 6.012
 
     - PERL_TYPE: strawberry
-      PERL_VERSION: 5.10.1
-      DIST_ZILLA: 5.048
-      STRAWBERRY_URL: http://strawberryperl.com/download/5.10.1.5/strawberry-perl-5.10.1.5.zip
-
-    - PERL_TYPE: strawberry
-      PERL_VERSION: 5.12.3
-      DIST_ZILLA: 5.048
-      STRAWBERRY_URL: http://strawberryperl.com/download/5.12.3.0/strawberry-perl-5.12.3.0-64bit.zip
-
-    - PERL_TYPE: strawberry
       PERL_VERSION: 5.14.4
       DIST_ZILLA: 6.012
       STRAWBERRY_URL: http://strawberryperl.com/download/5.14.4.1/strawberry-perl-5.14.4.1-64bit.zip
