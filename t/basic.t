@@ -8,7 +8,7 @@ use Git::Wrapper;
 use Path::Tiny;
 use Test::DZil;
 use Test::Fatal;
-use Test::More;
+use Test::More 0.88;
 use Test::TempDir::Tiny;
 
 main();
