@@ -1,5 +1,0 @@
-[-Bangs::ProhibitBitwiseOperators]
-[-RegularExpressions::RequireDotMatchAnything]
-[-RegularExpressions::RequireExtendedFormatting]
-[-RegularExpressions::RequireLineBoundaryMatching]
-[-ValuesAndExpressions::ProhibitLeadingZeros]
