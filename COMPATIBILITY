@@ -1,8 +1,1 @@
-Dist::Zilla::Plugin::Git::GatherDir requires Dist::Zilla::Role::GitConfig
-  - Dist::Zilla::Role::GitConfig requires perl v5.10.1
-
-Dist::Zilla 5.048 requires CPAN::Uploader 0.103004
-  - CPAN::Uploader 0.103013 requires LWP::Protocol::https 1
-    - LWP::Protocol::https 6.07 requires IO::Socket::SSL 1.54
-      - IO::Socket::SSL 2.056 requires Net::SSLeay 1.46
-        - Net::SSLeay does not build on Strawberry Perl 5.12.3.0 on AppVeyor
+Dist::Zilla 6 requires perl v5.14.0

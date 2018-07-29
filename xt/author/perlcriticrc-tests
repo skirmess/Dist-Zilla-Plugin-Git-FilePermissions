@@ -4,4 +4,3 @@
 flowcontrol = skip
 
 [-Modules::RequireExplicitInclusion]
-[-ValuesAndExpressions::ProhibitLeadingZeros]
