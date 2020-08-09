@@ -4,4 +4,5 @@
 .build
 .perlcritic_package.yml
 Dist-Zilla-Plugin-Git-FilePermissions-*
+dzil-inc
 tmp
