@@ -25,7 +25,6 @@ on test => sub {
 
 on develop => sub {
     requires 'CPANPLUS';
-    requires 'FindBin';
     requires 'JSON::MaybeXS';
     requires 'Module::Info';
     requires 'Perl::Critic', '1.140';
