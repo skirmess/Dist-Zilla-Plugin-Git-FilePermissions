@@ -3,18 +3,23 @@ abstract: 'fix the file permissions in your Git repository with Dist::Zilla'
 author:
   - 'Sven Kirmess <sven.kirmess@kzone.ch>'
 build_requires:
+  Carp: '0'
+  Cwd: '0'
   Dist::Zilla::Plugin::Git::GatherDir: '0'
+  Exporter: '5.57'
+  File::Basename: '0'
+  File::Path: '0'
+  File::Spec: '0'
   Test::DZil: '0'
   Test::Fatal: '0'
   Test::More: '0.88'
-  Test::TempDir::Tiny: '0'
   lib: '0'
   perl: '5.006'
 configure_requires:
   ExtUtils::MakeMaker: '0'
   perl: '5.006'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 6.022, CPAN::Meta::Converter version 2.150010'
+generated_by: 'Dist::Zilla, CPAN::Meta::Converter'
 license: open_source
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -24,10 +29,6 @@ no_index:
   directory:
     - t
     - xt
-provides:
-  Dist::Zilla::Plugin::Git::FilePermissions:
-    file: lib/Dist/Zilla/Plugin/Git/FilePermissions.pm
-    version: '1.000'
 requires:
   Dist::Zilla::Role::BeforeBuild: '0'
   Git::Wrapper: '0'
@@ -44,6 +45,4 @@ resources:
   homepage: https://github.com/skirmess/Dist-Zilla-Plugin-Git-FilePermissions
   repository: https://github.com/skirmess/Dist-Zilla-Plugin-Git-FilePermissions.git
 version: '1.000'
-x_generated_by_perl: v5.24.0
-x_serialization_backend: 'YAML::Tiny version 1.73'
 x_spdx_expression: BSD-2-Clause-FreeBSD

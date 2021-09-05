@@ -77,4 +77,4 @@ This is free software, licensed under:
 
 # SEE ALSO
 
-[Dist::Zilla::Plugin::Git::RequireUnixEOL](https://metacpan.org/pod/Dist::Zilla::Plugin::Git::RequireUnixEOL)
+[Dist::Zilla::Plugin::Git::RequireUnixEOL](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3AGit%3A%3ARequireUnixEOL)
