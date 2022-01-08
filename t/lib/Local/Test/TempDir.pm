@@ -6,12 +6,14 @@ use warnings;
 
 our $VERSION = '0.001';
 
-use Carp;
-use Cwd        ();
-use File::Path ();
-use File::Spec ();
+use Carp qw(croak);
+use Cwd qw(getcwd);
+use File::Path 2.07 qw(remove_tree);
+use File::Spec::Functions qw(catdir);
 
-use Exporter 5.57 qw(import);
+# Support Exporter < 5.57
+require Exporter;
+our @ISA       = qw(Exporter);    ## no critic (ClassHierarchies::ProhibitExplicitISA)
 our @EXPORT_OK = qw(tempdir);
 
 {
@@ -20,16 +22,23 @@ our @EXPORT_OK = qw(tempdir);
     sub _init {
         return if defined $temp_dir_base;
 
-        my $root_dir = Cwd::getcwd();
-        croak "Cannot get cwd: $!" if !defined $root_dir;
+        my $root_dir;
+        if ( exists $ENV{LOCAL_TEST_TEMPDIR_BASEDIR} ) {
+            $root_dir = $ENV{LOCAL_TEST_TEMPDIR_BASEDIR};
+            croak "env variables LOCAL_TEST_TEMPDIR_BASEDIR doesn't point to a valid directory: $root_dir" if !-d $root_dir;
+        }
+        else {
+            $root_dir = getcwd();
+            croak "Cannot get cwd: $!" if !defined $root_dir;
+        }
 
-        $temp_dir_base = File::Spec->catdir( $root_dir, 'tmp' );
+        $temp_dir_base = catdir( $root_dir, 'tmp' );
         if ( !-d $temp_dir_base ) {
             mkdir $temp_dir_base or croak "Cannot create directory $temp_dir_base $!";
         }
 
         ( my $dirname = $0 ) =~ tr{:\\/.}{_};
-        $temp_dir_base = File::Spec->catdir( $temp_dir_base, $dirname );
+        $temp_dir_base = catdir( $temp_dir_base, $dirname );
         if ( !-e $temp_dir_base ) {
             mkdir $temp_dir_base or croak "Cannot create directory $temp_dir_base $!";
         }
@@ -37,7 +46,7 @@ our @EXPORT_OK = qw(tempdir);
             croak "Not a directory $temp_dir_base";
         }
         else {
-            File::Path::remove_tree( $temp_dir_base, { keep_root => 1 } );
+            remove_tree( $temp_dir_base, { safe => 0, keep_root => 1 } );
         }
 
         return;
@@ -60,7 +69,7 @@ our @EXPORT_OK = qw(tempdir);
 
         _init();
 
-        my $tempdir = File::Spec->catdir( $temp_dir_base, $label );
+        my $tempdir = catdir( $temp_dir_base, $label );
         mkdir $tempdir or croak "Cannot create directory: $!";
 
         return $tempdir;
