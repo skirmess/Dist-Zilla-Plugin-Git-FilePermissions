@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 use Carp qw(croak);
-use Git::Wrapper;
+use Git::Background 0.003;
 use Path::Tiny;
 use Test::DZil;
 use Test::Fatal;
@@ -24,7 +24,7 @@ sub main {
 
   SKIP:
     {
-        skip 'Cannot find Git in PATH', 1 if !Git::Wrapper->has_git_in_path();
+        skip 'Cannot find Git in PATH', 1 if !defined Git::Background->version;
 
         _test_with_defaults();
         _test_with_changed_defaults();
@@ -69,8 +69,8 @@ sub _configure_root {
     my ($root_dir) = @_;
 
     # Create a git repository in the source
-    my $git = Git::Wrapper->new($root_dir);
-    $git->init();
+    my $git = Git::Background->new($root_dir);
+    $git->run('init')->get;
 
     # Create some directories
     $root_dir->child('bin')->mkpath();
@@ -81,27 +81,27 @@ sub _configure_root {
 
     push @files, path($root_dir)->child('bin/a');
     $files[-1]->spew();
-    $git->add( $files[-1] );
+    $git->run( 'add', $files[-1] )->get;
     chmod 0755, $files[-1] or croak "chmod 0755, $files[-1]: $!";
 
     push @files, path($root_dir)->child('scripts/b');
     $files[-1]->spew();
-    $git->add( $files[-1] );
+    $git->run( 'add', $files[-1] )->get;
     chmod 0600, $files[-1] or croak "chmod 0600, $files[-1]: $!";
 
     push @files, path($root_dir)->child('lib/c.pm');
     $files[-1]->spew();
-    $git->add( $files[-1] );
+    $git->run( 'add', $files[-1] )->get;
     chmod 0, $files[-1] or croak "chmod 0, $files[-1]: $!";
 
     push @files, path($root_dir)->child('d');
     $files[-1]->spew();
-    $git->add( $files[-1] );
+    $git->run( 'add', $files[-1] )->get;
     chmod 0644, $files[-1] or croak "chmod 0644, $files[-1]: $!";
 
     my $sub_src = _create_submodule();
     push @files, path($root_dir)->child('s');
-    $git->submodule( 'add', $sub_src, 's' );
+    $git->run( 'submodule', 'add', $sub_src, 's' )->get;
     $dir_perm = ( stat $files[-1] )[2] & 07777;
 
     is( ( stat $files[0] )[2] & 07777, _p(0755),  sprintf q{File '%s' created correctly},      $files[0]->relative($root_dir) );
@@ -116,15 +116,15 @@ sub _configure_root {
 sub _create_submodule {
     my $dir = path( tempdir() );
 
-    my $git = Git::Wrapper->new($dir);
-    $git->init();
+    my $git = Git::Background->new($dir);
+    $git->run('init')->get;
 
     my $file = $dir->child('file.txt');
     $file->spew();
-    $git->add('file.txt');
-    $git->config( 'user.email', 'test@example.com' );
-    $git->config( 'user.name',  'Test' );
-    $git->commit( '-m', 'initial' );
+    $git->run( 'add',    'file.txt' )->get;
+    $git->run( 'config', 'user.email', 'test@example.com' )->get;
+    $git->run( 'config', 'user.name',  'Test' )->get;
+    $git->run( 'commit', '-m',         'initial' )->get;
 
     return $dir;
 }

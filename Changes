@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-Plugin-Git-FilePermissions
 
 {{$NEXT}}
 
+  - Replace Git::Wrapper with Git::Background
   - Removed minimal dependency on Test::TempDir::Tiny 0.017 and Moose 2.1203
   - skip needs $how_many with Test::More < 1.302013_009
   - Removed autodie in tests

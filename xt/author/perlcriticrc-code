@@ -1,4 +1,8 @@
 [-Bangs::ProhibitBitwiseOperators]
+
+# test cannot be configured to allow "$self->log_fatal() if ..."
+[-ControlStructures::ProhibitPostfixControls]
+
 [-RegularExpressions::RequireDotMatchAnything]
 [-RegularExpressions::RequireExtendedFormatting]
 [-RegularExpressions::RequireLineBoundaryMatching]

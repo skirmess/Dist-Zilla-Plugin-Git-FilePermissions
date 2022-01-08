@@ -1,9 +1,7 @@
 requires 'Dist::Zilla::Role::BeforeBuild';
-requires 'Git::Wrapper';
+requires 'Git::Background', '0.003';
 requires 'Moose';
 requires 'Path::Tiny';
-requires 'Safe::Isa';
-requires 'Try::Tiny';
 requires 'namespace::autoclean';
 requires 'perl', '5.006';
 requires 'strict';
@@ -232,6 +230,7 @@ on develop => sub {
         requires 'MooseX::Types::Moose';
         requires 'Perl::MinimumVersion', '1.26';
         requires 'Perl::Tidy';
+        requires 'Safe::Isa';
         requires 'Scalar::Util';
         requires 'Term::ANSIColor';
         requires 'YAML::Tiny';
