@@ -2,6 +2,8 @@ Revision history for Dist-Zilla-Plugin-Git-FilePermissions
 
 {{$NEXT}}
 
+  - Switch license to the ISC license
+
 1.001  2022-01-08 22:42:13 UTC
 
   - Replace Git::Wrapper with Git::Background

@@ -67,14 +67,6 @@ public review and contribution under the terms of the license.
 
 Sven Kirmess <sven.kirmess@kzone.ch>
 
-# COPYRIGHT AND LICENSE
-
-This software is Copyright (c) 2017-2022 by Sven Kirmess.
-
-This is free software, licensed under:
-
-    The (two-clause) FreeBSD License
-
 # SEE ALSO
 
 [Dist::Zilla::Plugin::Git::RequireUnixEOL](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3AGit%3A%3ARequireUnixEOL)
