@@ -122,8 +122,8 @@ sub _configure_root {
         # "protocol.file.allow=always" lets the submodule command clone from
         # a local directory. It's necessary as of Git 2.38.1, where the
         # default was changed to "user" in response to CVE-2022-39253.
-        # It isn't a concern here where all repos involved are trusted. For
-        # more information, see:
+        # It isn't a concern here where all repositories involved are
+        # trusted. For more information, see:
         # https://vielmetti.typepad.com/logbook/2022/10/git-security-fixes-lead-to-fatal-transport-file-not-allowed-error-in-ci-systems-cve-2022-39253.html
         # https://github.com/microsoft/go-infra/pull/71/files
         # https://github.blog/2022-10-18-git-security-vulnerabilities-announced/#cve-2022-39253
