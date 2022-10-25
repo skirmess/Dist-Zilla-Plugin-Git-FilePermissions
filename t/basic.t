@@ -117,7 +117,20 @@ sub _configure_root {
 
     my $sub_src = _create_submodule();
     push @files, path($root_dir)->child('s');
-    $git->run( 'submodule', 'add', $sub_src, 's' )->get;
+    if ( $git->run( 'submodule', 'add', $sub_src, 's' )->await->is_failed ) {
+
+        # "protocol.file.allow=always" lets the submodule command clone from
+        # a local directory. It's necessary as of Git 2.38.1, where the
+        # default was changed to "user" in response to CVE-2022-39253.
+        # It isn't a concern here where all repos involved are trusted. For
+        # more information, see:
+        # https://vielmetti.typepad.com/logbook/2022/10/git-security-fixes-lead-to-fatal-transport-file-not-allowed-error-in-ci-systems-cve-2022-39253.html
+        # https://github.com/microsoft/go-infra/pull/71/files
+        # https://github.blog/2022-10-18-git-security-vulnerabilities-announced/#cve-2022-39253
+        # https://bugs.launchpad.net/ubuntu/+source/git/+bug/1993586
+        # https://git-scm.com/docs/git-config#Documentation/git-config.txt-protocolallow
+        $git->run( '-c', 'protocol.file.allow=always', 'submodule', 'add', $sub_src, 's' )->get;
+    }
     $dir_perm = ( stat $files[-1] )[2] & 07777;
 
     is( ( stat $files[0] )[2] & 07777, _p(0755),  sprintf q{File '%s' created correctly},      $files[0]->relative($root_dir) );

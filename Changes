@@ -3,6 +3,7 @@ Revision history for Dist-Zilla-Plugin-Git-FilePermissions
 {{$NEXT}}
 
   - Switch license to the ISC license
+  - Use 'protocol.file.allow=always' for Git submodule tests, if required.
 
 1.001  2022-01-08 22:42:13 UTC
 
