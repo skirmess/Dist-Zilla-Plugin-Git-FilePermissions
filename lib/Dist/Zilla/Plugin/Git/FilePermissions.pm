@@ -20,7 +20,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Git::FilePermissions;
 
-our $VERSION = '1.001';
+our $VERSION = '1.002';
 
 use Moose;
 with 'Dist::Zilla::Role::BeforeBuild';
@@ -151,7 +151,7 @@ Dist::Zilla::Plugin::Git::FilePermissions - fix the file permissions in your Git
 
 =head1 VERSION
 
-Version 1.001
+Version 1.002
 
 =head1 SYNOPSIS
 
